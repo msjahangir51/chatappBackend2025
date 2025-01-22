@@ -7,7 +7,7 @@ const { messageRoute } = require("./routes/message.route");
 
 // base middleware 
 app.use(cors({
-    origin: ["http://localhost:5173"],
+    origin: ["https://withme-chat.netlify.app"],
     credentials: true,
     methods: ['GET','PORT','PUT','DELETE']
 }))
