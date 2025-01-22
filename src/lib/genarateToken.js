@@ -27,8 +27,8 @@ const genarateToken = async (userId, res) => {
     res.cookie("jwt", token, {
         maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days in milliseconds
         httpOnly: true, // Prevent client-side access
-        secure: process.env.NODE_ENV === "production", // Only send over HTTPS in production
-        sameSite: process.env.NODE_ENV === "production" ? "none" : "lax", // Allow cross-origin in production
+        secure: process.env.NODE_SECRET === "production", // Only send over HTTPS in production
+        sameSite: process.env.NODE_SECRET === "production" ? "none" : "lax", // Allow cross-origin in production
     });
 
     return token;
